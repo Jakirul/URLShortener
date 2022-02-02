@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Balsamiq+Sans:wght@700&family=Cabin&family=Dancing+Script:wght@400;500;700&family=Dongle&family=Lato:wght@300;400&family=Montserrat:wght@300;400&family=Ubuntu&family=Varela+Round&display=swap');
+
+
+
+body{
+    background-color: rgb(192, 240, 240);
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type='text'] {
+    padding: 5px 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    
+}
+
+input[type='submit'] {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #45a33e;
+    font-weight: bold;
+    color: white;
+}
+
+input[type='submit']:hover {
+    background-color: #3d9237;
+}
+
+ul {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    width: 40%;
+    padding: 20px;
+    margin: 10px auto;
+}
+
+ul li {
+    list-style-type: none;
+}

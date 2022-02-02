@@ -12,7 +12,7 @@ def home(request):
             rand_number = randint(100, 99999)
             url = form.cleaned_data.get('url')
             if not str(url).startswith("https"):
-                Main.objects.create(url="http://"+url, shortened_url=rand_number)
+                Main.objects.create(url="https://"+url, shortened_url=rand_number)
             else:
                 Main.objects.create(url=url, shortened_url=rand_number)
             
@@ -24,9 +24,9 @@ def home(request):
 
 
 def redirect_url(request, shortened_url):
-    value = Main.objects.get(shortened_url=shortened_url)
-    if value:
+    try:
+        value = Main.objects.get(shortened_url=shortened_url)
         return redirect(value.url)
-    else:
-        return render(request, "home.html")
+    except:
+        return redirect("home")
 
