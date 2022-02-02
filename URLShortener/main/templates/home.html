@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+    </head>
+    <body>
+        
+        <main>
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <!-- <button type="submit" name="url">Submit</button> -->
+                <input type="submit" name="submit" />
+            </form>
+            <ul>
+                {% for number in all %}
+                    <li>{{number.url}} - <a href="http://127.0.0.1:8000/{{number.shortened_url}}">{{ number.shortened_url }}</a></li>
+                {% endfor %}
+            <!-- {% for i in main %}
+            
+            {% endfor %} -->
+            </ul>
+
+        </main>
+    </body>
+
+</html>
