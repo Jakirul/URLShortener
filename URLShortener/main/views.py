@@ -9,9 +9,13 @@ def home(request):
     if request.method == 'POST':
         form = NewLinkForm(request.POST)
         if form.is_valid():
-            url = form.cleaned_data.get('url')
             rand_number = randint(100, 99999)
-            Main.objects.create(url=url, shortened_url=rand_number)
+            url = form.cleaned_data.get('url')
+            if not str(url).startswith("https"):
+                Main.objects.create(url="http://"+url, shortened_url=rand_number)
+            else:
+                Main.objects.create(url=url, shortened_url=rand_number)
+            
             return redirect("home")
     else:
         form = NewLinkForm()

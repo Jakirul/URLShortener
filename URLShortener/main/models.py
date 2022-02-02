@@ -8,5 +8,5 @@ class Main(models.Model):
 
 
 
-    def _str_(self):
-        return self.url + self.shortened_url
+    def __str__(self):
+        return f"{self.url} - {self.shortened_url}"
